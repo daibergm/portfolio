@@ -21,40 +21,40 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "./src/components/*"
+        "./src/common/components/*"
       ],
-      "@api/*": [
-        "./src/api/*"
+      "@modules/*": [
+        "./src/modules/*"
       ],
-      "@models/*": [
-        "./src/models/*"
-      ],
-      "@screens/*": [
-        "./src/screens/*"
+      "@pages/*": [
+        "./src/pages/*"
       ],
       "@hooks/*": [
-        "./src/hooks/*"
+        "./src/common/hooks/*"
       ],
       "@services/*": [
-        "./src/services/*"
+        "./src/common/services/*"
       ],
       "@constants": [
-        "./src/constants/*"
+        "./src/common/constants/*"
       ],
       "@context/*": [
         "./src/context/*"
       ],
       "@typeDefs/*": [
-        "./src/types/*"
+        "./src/common/types/*"
       ],
       "@public/*": [
         "./public/*"
       ],
       "@utils/*": [
-        "./src/utils/*"
+        "./src/common/utils/*"
       ],
       "@assets/*": [
         "./src/assets/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
       ]
     },
     "incremental": true
