@@ -1,5 +1,5 @@
-import { ReactChild, useState } from 'react';
-import { styled } from '@mui/material/styles';
+import { ReactChild, useState, useContext } from 'react';
+import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,6 +15,7 @@ import {
   LinkedIn,
   GitHub,
   Brightness4,
+  Brightness7,
 } from '@mui/icons-material';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -23,6 +24,12 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Switch from '@mui/material/Switch';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import { capitalize } from 'lodash';
+
+// @Context
+import { ThemeContext } from '@context/index';
 
 const WIDTH = 240;
 
@@ -57,6 +64,10 @@ interface Props {
 export default function DrawerComponent({ children }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const matches = useMediaQuery('(min-width:1024px)');
+  const {
+    palette: { mode },
+  } = useTheme();
+  const { toggleThemeMode } = useContext(ThemeContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -116,10 +127,10 @@ export default function DrawerComponent({ children }: Props) {
       <Divider />
       <StyledStack alignItems="center" spacing={1}>
         <Stack direction="row" spacing={1}>
-          <Brightness4 />
-          <Typography>Dark Mode</Typography>
+          {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+          <Typography>{`${capitalize(mode)} Mode`}</Typography>
         </Stack>
-        <Switch />
+        <Switch onClick={toggleThemeMode} checked={mode === 'dark'} />
       </StyledStack>
     </div>
   );
@@ -157,7 +168,19 @@ export default function DrawerComponent({ children }: Props) {
       >
         {drawer}
       </Drawer>
-      <Main open={matches}>{children}</Main>
+      <Main open={matches}>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleDrawerToggle}
+          edge="start"
+          sx={{ mr: 2, ...((mobileOpen || matches) && { display: 'none' }) }}
+          style={{ position: 'absolute' }}
+        >
+          <MenuIcon style={{ width: 40, height: 50 }} />
+        </IconButton>
+        {children}
+      </Main>
     </Box>
   );
 }
