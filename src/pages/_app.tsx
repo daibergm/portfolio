@@ -10,11 +10,16 @@ import '@styles/globals.css';
 // @Components
 import DrawerComponent from '@components/Drawer/DrawerComponent';
 
+// @Context
+import { ThemeState } from '@context/index';
+
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
-    <DrawerComponent>
-      <Component {...pageProps} />;
-    </DrawerComponent>
+    <ThemeState>
+      <DrawerComponent>
+        <Component {...pageProps} />;
+      </DrawerComponent>
+    </ThemeState>
   );
 }
 
