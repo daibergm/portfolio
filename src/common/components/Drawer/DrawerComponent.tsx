@@ -16,6 +16,7 @@ import {
   GitHub,
   Brightness4,
   Brightness7,
+  PersonOutline,
 } from '@mui/icons-material';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -30,6 +31,9 @@ import { capitalize } from 'lodash';
 
 // @Context
 import { ThemeContext } from '@context/index';
+
+// @Constants
+import { COLORS } from '@constants/index';
 
 const WIDTH = 240;
 
@@ -68,6 +72,7 @@ export default function DrawerComponent({ children }: Props) {
     palette: { mode },
   } = useTheme();
   const { toggleThemeMode } = useContext(ThemeContext);
+  const isDarkMode = mode === 'dark';
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -76,18 +81,24 @@ export default function DrawerComponent({ children }: Props) {
   const drawer = (
     <div>
       <StyledStack alignItems="center" spacing={2}>
-        <Typography variant="h5">Indie-Code</Typography>
-        <Avatar sx={{ width: 160, height: 160 }}>I-C</Avatar>
-        <Typography textAlign="center">
-          Hi, my name is Simon Doe and I'm a senior software engineer. Welcome to my personal
+        <Typography variant="h5" color="white">
+          Indie-Code
+        </Typography>
+        <Avatar
+          sx={{ width: 160, height: 160, bgcolor: isDarkMode ? COLORS.primary : COLORS.white }}
+        >
+          <PersonOutline fontSize="large" color={isDarkMode ? 'action' : 'primary'} />
+        </Avatar>
+        <Typography textAlign="center" color="white">
+          Hi, my name is Simon Doe and I am a senior software engineer. Welcome to my personal
           website!
         </Typography>
         <Stack direction="row" spacing={1}>
-          <Avatar>
-            <LinkedIn />
+          <Avatar sx={{ bgcolor: isDarkMode ? COLORS.primary : COLORS.white }}>
+            <LinkedIn color={isDarkMode ? 'action' : 'primary'} />
           </Avatar>
-          <Avatar>
-            <GitHub />
+          <Avatar sx={{ bgcolor: isDarkMode ? COLORS.primary : COLORS.white }}>
+            <GitHub color={isDarkMode ? 'action' : 'primary'} />
           </Avatar>
         </Stack>
       </StyledStack>
@@ -95,42 +106,42 @@ export default function DrawerComponent({ children }: Props) {
       <List>
         <ListItem button>
           <ListItemIcon>
-            <Person />
+            <Person sx={{ color: 'white' }} />
           </ListItemIcon>
-          <ListItemText primary="About" />
+          <ListItemText sx={{ color: 'white' }} primary="About" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <Computer />
+            <Computer sx={{ color: 'white' }} />
           </ListItemIcon>
-          <ListItemText primary="Portfolio" />
+          <ListItemText sx={{ color: 'white' }} primary="Portfolio" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <HomeRepairService />
+            <HomeRepairService sx={{ color: 'white' }} />
           </ListItemIcon>
-          <ListItemText primary="Services" />
+          <ListItemText sx={{ color: 'white' }} primary="Services" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <Feed />
+            <Feed sx={{ color: 'white' }} />
           </ListItemIcon>
-          <ListItemText primary="Resume" />
+          <ListItemText sx={{ color: 'white' }} primary="Resume" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <Drafts />
+            <Drafts sx={{ color: 'white' }} />
           </ListItemIcon>
-          <ListItemText primary="Contact" />
+          <ListItemText sx={{ color: 'white' }} primary="Contact" />
         </ListItem>
       </List>
       <Divider />
       <StyledStack alignItems="center" spacing={1}>
         <Stack direction="row" spacing={1}>
-          {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
-          <Typography>{`${capitalize(mode)} Mode`}</Typography>
+          {isDarkMode ? <Brightness7 /> : <Brightness4 sx={{ color: 'white' }} />}
+          <Typography sx={{ color: 'white' }}>{`${capitalize(mode)} Mode`}</Typography>
         </Stack>
-        <Switch onClick={toggleThemeMode} checked={mode === 'dark'} />
+        <Switch onClick={toggleThemeMode} checked={isDarkMode} />
       </StyledStack>
     </div>
   );
@@ -149,6 +160,11 @@ export default function DrawerComponent({ children }: Props) {
           display: { xs: 'block' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: WIDTH, paddingX: '1rem' },
         }}
+        PaperProps={{
+          sx: {
+            backgroundColor: !isDarkMode ? COLORS.primary : COLORS.paperNav,
+          },
+        }}
       >
         {drawer}
       </Drawer>
@@ -165,6 +181,11 @@ export default function DrawerComponent({ children }: Props) {
         variant="persistent"
         anchor="left"
         open={matches}
+        PaperProps={{
+          sx: {
+            backgroundColor: !isDarkMode ? COLORS.primary : COLORS.paperNav,
+          },
+        }}
       >
         {drawer}
       </Drawer>

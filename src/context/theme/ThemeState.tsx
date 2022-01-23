@@ -6,18 +6,18 @@ import ThemeContext from './ThemeContext';
 import { PaletteMode } from '@mui/material';
 
 // @Constants
-import { STORAGE_KEYS } from '@constants/index';
+import { STORAGE_KEYS, COLORS } from '@constants/index';
 
 type Props = {
   children: JSX.Element;
 };
 
 function ThemeState({ children }: Props) {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState<PaletteMode>('light');
 
   useEffect(() => {
     const themeMode = localStorage.getItem(STORAGE_KEYS.theme);
-    themeMode && setMode(themeMode);
+    themeMode && setMode(themeMode as PaletteMode);
   }, []);
 
   const colorMode = useMemo(
@@ -36,7 +36,24 @@ function ThemeState({ children }: Props) {
     () =>
       createTheme({
         palette: {
-          mode: mode as PaletteMode,
+          mode,
+          primary: {
+            main: COLORS.primary,
+            dark: COLORS.paper,
+          },
+          ...(mode === 'light'
+            ? {
+                background: {
+                  default: COLORS.white,
+                  paper: COLORS.whiteTwo,
+                },
+              }
+            : {
+                background: {
+                  default: COLORS.darkDefault,
+                  paper: COLORS.darkPaper,
+                },
+              }),
         },
       }),
     [mode]
