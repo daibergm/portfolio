@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "coverage": "jest --env=jsdom --coverage",
     "dev": "next dev",
     "lint": "eslint ./**/*.ts{,x}",
+    "postinstall": "husky install",
     "start": "next start",
     "test": "jest --env=jsdom",
-    "coverage": "jest --env=jsdom --coverage",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
@@ -49,6 +50,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
     "jest": "^27.5.1",
     "node-mocks-http": "^1.11.0",
     "prettier": "^2.4.1",
