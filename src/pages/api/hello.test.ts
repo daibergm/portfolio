@@ -17,7 +17,7 @@ describe('/api/hello', () => {
     expect(JSON.parse(res._getData())).toEqual(
       expect.objectContaining({
         name: 'John Doe',
-      }),
+      })
     );
   });
 });
