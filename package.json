@@ -7,7 +7,8 @@
     "dev": "next dev",
     "lint": "eslint ./**/*.ts{,x}",
     "start": "next start",
-    "test": "jest",
+    "test": "jest --env=jsdom",
+    "coverage": "jest --env=jsdom --coverage",
     "ts:check": "tsc --noEmit"
   },
   "dependencies": {
@@ -25,7 +26,7 @@
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.0.2",
+    "@types/jest": "^27.4.0",
     "@types/lodash": "^4.14.178",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
@@ -33,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.5.1",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.0",
@@ -47,26 +49,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "jest": "^27.3.1",
+    "jest": "^27.5.1",
+    "node-mocks-http": "^1.11.0",
     "prettier": "^2.4.1",
     "typescript": "^4.4.4"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/path/to/dir/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 70,
-        "functions": 70,
-        "lines": 70,
-        "statements": 70
-      }
-    },
-    "coverageReporters": [
-      "text"
-    ]
   }
 }

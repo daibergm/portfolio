@@ -197,6 +197,7 @@ export default function DrawerComponent({ children }: Props) {
           edge="start"
           sx={{ mr: 2, ...((mobileOpen || matches) && { display: 'none' }) }}
           style={{ position: 'absolute' }}
+          data-testid="menu"
         >
           <MenuIcon style={{ width: 40, height: 50 }} />
         </IconButton>
