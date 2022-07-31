@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Button from '@mui/material/Button';
 
 // @Styles
 import styles from '@styles/Home.module.css';
@@ -18,7 +19,7 @@ export default function Home(): JSX.Element {
 
         <p className={styles.description}>
           {`Get started by editing `}
-          <code className={styles.code}>pages/index.js</code>
+          <Button variant="contained">Test</Button>
         </p>
 
         <div className={styles.grid}>
