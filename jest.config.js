@@ -1,28 +1,24 @@
-function makeModuleNameMapper(srcPath, tsconfigPath) {
-  // Get paths from tsconfig
-  const { paths } = require(tsconfigPath).compilerOptions;
+// jest.config.js
+const nextJest = require('next/jest');
 
-  const aliases = {};
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: './',
+});
 
-  // Iterate over paths and convert them into moduleNameMapper format
-  Object.keys(paths).forEach((item) => {
-    const key = item.replace('/*', '/(.*)');
-    const path = paths[item][0].replace('/*', '/$1').replace('./src/', '');
-    aliases[key] = srcPath + '/' + path;
-  });
-  return aliases;
-}
-
-const TS_CONFIG_PATH = './tsconfig.json';
-const SRC_PATH = '<rootDir>/src';
-
-module.exports = {
-  setupFilesAfterEnv: ['./jest.setup.js'],
+// Add any custom config to be passed to Jest
+/** @type {import('jest').Config} */
+const customJestConfig = {
+  // Add more setup options before each test is run
+  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
+  moduleDirectories: ['node_modules', '<rootDir>/'],
+  testEnvironment: 'jest-environment-jsdom',
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
     '!<rootDir>/node_modules/',
     '!<rootDir>/path/to/dir/',
-    '!<rootDir>/src/pages/_app.tsx',
+    '!<rootDir>/src/pages/**/*page.tsx',
   ],
   coverageThreshold: {
     global: {
@@ -30,14 +26,9 @@ module.exports = {
       functions: 70,
       lines: 70,
       statements: 70,
-    }
+    },
   },
-  coverageReporters: [
-    'lcov',
-    'text',
-  ],
-  roots: [
-    SRC_PATH,
-  ],
-  moduleNameMapper: makeModuleNameMapper(SRC_PATH, TS_CONFIG_PATH),
 };
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+module.exports = createJestConfig(customJestConfig);
