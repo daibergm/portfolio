@@ -1,25 +1,39 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
+    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
     'prettier',
+    'plugin:prettier/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 13,
-    sourceType: 'module',
-  },
-  plugins: ['react', '@typescript-eslint'],
   rules: {
-    'react/react-in-jsx-scope': 0,
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-explicit-any': 'error',
+    'sort-imports': [
+      'error',
+      {
+        ignoreDeclarationSort: true,
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'never',
+        alphabetize: {
+          order: 'asc',
+        },
+        groups: ['external', 'builtin', 'internal', 'index', 'parent', 'sibling', 'object', 'type'],
+      },
+    ],
+    'import/no-duplicates': 'error',
+    'import/no-useless-path-segments': [
+      'error',
+      {
+        noUselessIndex: true,
+        commonjs: true,
+      },
+    ],
+    'import/newline-after-import': 'error',
   },
 };
