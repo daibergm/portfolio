@@ -14,7 +14,6 @@ function Main() {
           <SocialIcons
             className="flex justify-between pt-4 max-w-[330px] m-auto"
             size={30}
-            tailwindPadding="3"
             color="#5651e5"
           />
         </div>
