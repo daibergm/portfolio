@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
-import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from 'react-icons/ai';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { useState } from 'react';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import SocialIcons from '../SocialIcons';
 import Logo from './components/Logo';
 import { menus } from './constants';
 
@@ -14,7 +13,7 @@ function NavBar() {
   const renderMenu = () =>
     menus.map(({ name }, index) => (
       <Link href="/" key={Math.random()}>
-        <li className="text-sm hover:bg-[#709dff] p-2" data-testid={`menu-item-${index}`}>
+        <li className="text-sm hover:bg-[#5651e5] p-2" data-testid={`menu-item-${index}`}>
           {name}
         </li>
       </Link>
@@ -68,21 +67,7 @@ function NavBar() {
           {/* Footer */}
           <div className="px-2  pt-40">
             <p className="uppercase tracking-widest text-[#5651e5]">{`let's connect`}</p>
-            {/* Social icons */}
-            <div className="flex py-4 w-full">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer hover:scale-105 ease-in duration-200 mr-2">
-                <FaLinkedinIn size={20} />
-              </div>
-              <div className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer hover:scale-105 ease-in duration-200 mr-2">
-                <FaGithub size={20} />
-              </div>
-              <div className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer hover:scale-105 ease-in duration-200 mr-2">
-                <AiOutlineMail size={20} />
-              </div>
-              <div className="rounded-full shadow-lg shadow-gray-400 p-2 cursor-pointer hover:scale-105 ease-in duration-200 mr-2">
-                <BsFillPersonLinesFill size={20} />
-              </div>
-            </div>
+            <SocialIcons size={20} extraClass="mr-2" className="flex py-4 w-full" />
           </div>
         </div>
       </div>
