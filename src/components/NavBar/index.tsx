@@ -25,7 +25,7 @@ function NavBar() {
     <div className="fixed w-full h-20 shadow-xl z-[100]">
       {/* Desktop NavBar */}
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
-        <Logo width={125} height={50} />
+        <Logo width={83} height={57} />
         <div>
           <ul className="hidden md:flex uppercase">{renderMenu()}</ul>
           <div data-testid="desktop-nav-toggle-btn" onClick={handleShowNav} className="md:hidden">
@@ -48,7 +48,7 @@ function NavBar() {
         >
           {/* Header */}
           <div className="flex justify-between px-2">
-            <Logo width={87} height={35} />
+            <Logo width={59} height={38} />
             <div
               data-testid="mobile-nav-close-btn"
               onClick={handleShowNav}
