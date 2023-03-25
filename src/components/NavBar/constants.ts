@@ -1,7 +1,7 @@
-export const menus: { name: string }[] = [
-  { name: 'home' },
-  { name: 'about' },
-  { name: 'skills' },
-  { name: 'projects' },
-  { name: 'contact' },
+export const menus: { name: string; href: string }[] = [
+  { name: 'home', href: '/' },
+  { name: 'about', href: '#about' },
+  { name: 'skills', href: '#skills' },
+  { name: 'projects', href: '#projects' },
+  { name: 'contact', href: '#contact' },
 ];

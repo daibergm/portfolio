@@ -11,8 +11,8 @@ function NavBar() {
   const handleShowNav = () => setShowNav(!showNav);
 
   const renderMenu = () =>
-    menus.map(({ name }, index) => (
-      <Link href="/" key={Math.random()}>
+    menus.map(({ name, href }, index) => (
+      <Link href={href} key={Math.random()}>
         <li className="text-sm hover:bg-[#5651e5] p-2" data-testid={`menu-item-${index}`}>
           {name}
         </li>
