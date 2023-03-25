@@ -31,7 +31,7 @@ function About() {
         </div>
         <div className="max-w-[640px] mt-2 md:m-auto h-auto shadow-xl shadow-gray-400 rounded-xl p-2 hover:scale-105 ease-in duration-300 flex items-center justify-center">
           <Image
-            src="/../public/static/assets/about.jpg"
+            src="/static/assets/about.jpg"
             alt="about"
             width={640}
             height={800}
