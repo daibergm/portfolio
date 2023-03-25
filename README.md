@@ -17,13 +17,14 @@
 - [Boilerplate](#) : :heavy_check_mark:
 - [Desktop NavBar](#) : :heavy_check_mark:
 - [Mobile NavBar](#) : :heavy_check_mark:
-- [Home Page](#) : :warning:
-- [About Page](#) : :warning:
+- [Main Page](#) : :heavy_check_mark:
+- [About Page](#) : :heavy_check_mark:
 - [Skills Page](#) : :warning:
 - [Projects Page](#) : :warning:
 - [Contact Page](#) : :warning:
 - [Dark Mode](#) : :warning:
 - [i18n](#) : :warning:
+- [Backend-Int](#) : :warning:
 
 ## Run Locally
 

@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { Main, NavBar } from '@/components';
+import { About, Main, NavBar } from '@/components';
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +12,7 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
       <Main />
+      <About />
     </div>
   );
 };
