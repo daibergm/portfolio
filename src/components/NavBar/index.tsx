@@ -11,17 +11,17 @@ function NavBar() {
   const handleShowNav = () => setShowNav(!showNav);
 
   const renderMenu = () =>
-    menus.map(({ name, href }, index) => (
-      <Link href={href} key={Math.random()}>
+    menus.map((menu, index) => (
+      <Link href={menu.href} key={JSON.stringify(menu)}>
         <li className="text-sm hover:bg-[#5651e5] p-2" data-testid={`menu-item-${index}`}>
-          {name}
+          {menu.name}
         </li>
       </Link>
     ));
 
   return (
     // Container
-    <div className="fixed w-full h-20 shadow-xl z-[100]">
+    <div className="fixed w-full h-20 shadow-xl z-[100] bg-[#ecf0f3]">
       {/* Desktop NavBar */}
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Logo width={83} height={57} />

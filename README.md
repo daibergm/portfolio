@@ -19,8 +19,8 @@
 - [Mobile NavBar](#) : :heavy_check_mark:
 - [Main Page](#) : :heavy_check_mark:
 - [About Page](#) : :heavy_check_mark:
-- [Skills Page](#) : :warning:
-- [Projects Page](#) : :warning:
+- [Skills Page](#) : :heavy_check_mark:
+- [Projects Page](#) : :heavy_check_mark:
 - [Contact Page](#) : :warning:
 - [Dark Mode](#) : :warning:
 - [i18n](#) : :warning:
