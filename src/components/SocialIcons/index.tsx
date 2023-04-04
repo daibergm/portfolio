@@ -17,27 +17,27 @@ function SocialIcons({
         className={`rounded-full shadow-lg shadow-gray-400 p-${tailwindPadding} cursor-pointer hover:scale-105 ease-in duration-200 ${extraClass}`}
       >
         <Link href="https://www.linkedin.com/in/daibergm/">
-          <>
+          <a>
             <FaLinkedinIn size={size} color={color} />
-          </>
+          </a>
         </Link>
       </div>
       <div
         className={`rounded-full shadow-lg shadow-gray-400 p-${tailwindPadding} cursor-pointer hover:scale-105 ease-in duration-200 ${extraClass}`}
       >
         <Link href="https://github.com/daibergm">
-          <>
+          <a>
             <FaGithub size={size} color={color} />
-          </>
+          </a>
         </Link>
       </div>
       <div
         className={`rounded-full shadow-lg shadow-gray-400 p-${tailwindPadding} cursor-pointer hover:scale-105 ease-in duration-200 ${extraClass}`}
       >
         <Link href="mailto:daibergonzalez94@gmail.com">
-          <>
+          <a>
             <AiOutlineMail size={size} color={color} />
-          </>
+          </a>
         </Link>
       </div>
       <div
