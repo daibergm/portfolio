@@ -25,12 +25,12 @@ function NavBar() {
       {/* Desktop NavBar */}
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Logo width={83} height={57} />
-        <div>
+        <>
           <ul className="hidden md:flex uppercase">{renderMenu()}</ul>
           <div data-testid="desktop-nav-toggle-btn" onClick={handleShowNav} className="md:hidden">
             <AiOutlineMenu size={25} />
           </div>
-        </div>
+        </>
       </div>
       {/* Mobile NavBar */}
       <div
@@ -61,9 +61,7 @@ function NavBar() {
             <p className="py-4">{`Let's build something legendary together`}</p>
           </div>
           {/* Menu */}
-          <div>
-            <ul className="uppercase">{renderMenu()}</ul>
-          </div>
+          <ul className="uppercase">{renderMenu()}</ul>
           {/* Footer */}
           <div className="px-2  pt-40">
             <p className="uppercase tracking-widest text-[#5651e5]">{`let's connect`}</p>
