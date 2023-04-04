@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import SocialIcons from '../SocialIcons';
 import Logo from './components/Logo';
@@ -7,6 +7,18 @@ import { menus } from './constants';
 
 function NavBar() {
   const [showNav, setShowNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
+
+  useEffect(() => {
+    function handleShadow() {
+      if (window.scrollY >= 90) setShadow(true);
+      else setShadow(false);
+    }
+
+    addEventListener('scroll', handleShadow);
+
+    return () => removeEventListener('scroll', handleShadow);
+  }, []);
 
   const handleShowNav = () => setShowNav(!showNav);
 
@@ -21,7 +33,7 @@ function NavBar() {
 
   return (
     // Container
-    <div className="fixed w-full h-20 shadow-xl z-[100] bg-[#ecf0f3]">
+    <div className={`fixed w-full h-20 ${shadow && 'shadow-xl'} z-[100] bg-[#ecf0f3]`}>
       {/* Desktop NavBar */}
       <div className="flex justify-between items-center w-full h-full px-4 2xl:px-16">
         <Logo width={83} height={57} />
