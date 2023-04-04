@@ -15,16 +15,17 @@
 ## Features Status
 
 - [Boilerplate](#) : :heavy_check_mark:
-- [Desktop NavBar](#) : :heavy_check_mark:
-- [Mobile NavBar](#) : :heavy_check_mark:
-- [Main Page](#) : :heavy_check_mark:
-- [About Page](#) : :heavy_check_mark:
-- [Skills Page](#) : :heavy_check_mark:
-- [Projects Page](#) : :heavy_check_mark:
-- [Contact Page](#) : :warning:
+- [NavBar](#) : :heavy_check_mark:
+- [SideBar](#) : :heavy_check_mark:
+- [Main Content](#) : :heavy_check_mark:
+- [About Content](#) : :heavy_check_mark:
+- [Skills Content](#) : :heavy_check_mark:
+- [Projects Content](#) : :heavy_check_mark:
+- [Contact Content](#) : :heavy_check_mark:
+- [Project Page](#) : :warning:
+- [i18n Integration](#) : :warning:
+- [Backend Integration](#) : :warning:
 - [Dark Mode](#) : :warning:
-- [i18n](#) : :warning:
-- [Backend-Int](#) : :warning:
 
 ## Run Locally
 
