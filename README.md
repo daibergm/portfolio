@@ -22,7 +22,7 @@
 - [Skills Content](#) : :heavy_check_mark:
 - [Projects Content](#) : :heavy_check_mark:
 - [Contact Content](#) : :heavy_check_mark:
-- [Project Page](#) : :warning:
+- [Project Page](#) : :heavy_check_mark:
 - [i18n Integration](#) : :warning:
 - [Backend Integration](#) : :warning:
 - [Dark Mode](#) : :warning:

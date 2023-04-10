@@ -98,7 +98,7 @@ function Contact() {
           </div>
         </div>
         <div className="flex justify-center items-center pt-16">
-          <Link href="/">
+          <Link href="/#">
             <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-105 ease-in duration-200">
               <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
             </div>
