@@ -36,3 +36,35 @@ html {
     @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-gray-100;
   }
 }
+
+.app-menu-link {
+  position: relative;
+}
+
+.app-menu-link::before, .app-menu-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #5651e5;
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+
+.app-menu-link::before {
+  top: -3px;
+  transform-origin: left;
+}
+
+.app-menu-link::after {
+  bottom: -3px;
+  transform-origin: right;
+}
+
+.app-menu-link:hover::before,
+.app-menu-link:hover::after,
+.link-active::before,
+.link-active::after {
+  transform: scaleX(1);
+}

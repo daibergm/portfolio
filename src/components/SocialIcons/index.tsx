@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { AiOutlineMail } from 'react-icons/ai';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import { SocialIconProps } from './types';
 
 function SocialIcons({
@@ -43,7 +42,11 @@ function SocialIcons({
       <div
         className={`rounded-full shadow-lg shadow-gray-400 p-${tailwindPadding} cursor-pointer hover:scale-105 ease-in duration-200 ${extraClass}`}
       >
-        <BsFillPersonLinesFill size={size} color={color} />
+        <Link href="https://wa.link/tta1t8">
+          <a>
+            <FaWhatsapp size={size} color={color} />
+          </a>
+        </Link>
       </div>
     </div>
   );

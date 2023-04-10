@@ -1,5 +1,5 @@
+import { ProjectsList } from '@/mocks';
 import ProjectItem from './components/ProjectItem';
-import { ProjectsList } from './constants';
 
 function Projects() {
   return (

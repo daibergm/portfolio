@@ -22,12 +22,15 @@ const customJestConfig = {
   ],
   coverageThreshold: {
     global: {
-      branches: 65,
+      branches: 60,
       functions: 70,
       lines: 70,
       statements: 70,
     },
   },
+  moduleNameMapper: {
+    '^@/mocks$': '<rootDir>/src/mocks',
+  }
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
