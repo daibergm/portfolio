@@ -1,0 +1,7 @@
+**/build/**
+**/public/**
+**/.next/**
+**/.github/**
+**/coverage/**
+**/node_modules/**
+README.md
