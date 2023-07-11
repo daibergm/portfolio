@@ -41,7 +41,8 @@ html {
   position: relative;
 }
 
-.app-menu-link::before, .app-menu-link::after {
+.app-menu-link::before,
+.app-menu-link::after {
   content: '';
   position: absolute;
   left: 0;
