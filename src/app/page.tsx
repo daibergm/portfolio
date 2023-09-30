@@ -1,8 +1,6 @@
 'use client';
 import { ThemeProvider } from 'next-themes';
-import Hero from '../components/hero/Hero';
-import Seo from '../components/seo/Seo';
-import Header from '@/components/header/Header';
+import { Header, Hero, Seo } from '@/components';
 
 export default function Home() {
   return (
