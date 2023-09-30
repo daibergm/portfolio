@@ -5,7 +5,7 @@ function Logo(props: LogoProps) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 815.9 360.89" {...props}>
       <defs>
-        <style>{'.cls-1{fill:currentColor}.cls-2{fill:currentColor}'}</style>
+        <style>{'.cls-1{fill:#FFF}.cls-2{fill:#FFF}'}</style>
       </defs>
       <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1">
