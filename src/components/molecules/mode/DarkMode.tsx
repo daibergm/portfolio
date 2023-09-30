@@ -1,5 +1,5 @@
-import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 export default function DarkMode() {
   const { theme, setTheme } = useTheme();

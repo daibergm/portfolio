@@ -1,5 +1,5 @@
-import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 export default function DarkModeMobile() {
   const { theme, setTheme } = useTheme();
@@ -13,7 +13,7 @@ export default function DarkModeMobile() {
   return (
     <>
       <span
-        className="bg-white w-[40px] hover:text-white flex items-center h-[40px] rounded-full lg:hidden justify-center items-center text-black hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer ml-2 "
+        className="bg-white w-[40px] hover:text-white flex h-[40px] rounded-full lg:hidden justify-center items-center text-black hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer ml-2 "
         onClick={toggle}
       >
         <FiMoon className="text-3xl dark-mode-light dark:hidden" />

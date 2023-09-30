@@ -1,1 +1,3 @@
-export { default as HeaderMenu } from './HeaderMenu';
+export * from './brands';
+export * from './headerMenu';
+export * from './services';
