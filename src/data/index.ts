@@ -1,3 +1,3 @@
 export * from './brands';
-export * from './headerMenu';
+export * from './appMenu';
 export * from './services';
