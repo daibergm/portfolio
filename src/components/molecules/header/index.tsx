@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { HEADER_MENU } from '@/data';
+import { APP_MENU } from '@/data';
 import { isActiveLink } from '@/utils/linkActiveChecker';
 import { Logo } from '../../atoms';
 
@@ -56,7 +56,7 @@ function Header() {
                   : 'flex my-12 '
               }`}
             >
-              {HEADER_MENU.map((item) => (
+              {APP_MENU.map((item) => (
                 <li key={item.id} className="mb-1">
                   <Link
                     className={`${

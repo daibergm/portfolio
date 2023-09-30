@@ -4,7 +4,7 @@ import { /* FaBlogger , */ FaRegUser } from 'react-icons/fa';
 // import { FiCodesandbox } from 'react-icons/fi';
 // import { RiContactsBookLine } from 'react-icons/ri';
 
-export const HEADER_MENU = [
+export const APP_MENU = [
   {
     id: '01',
     name: 'Home',
