@@ -16,7 +16,7 @@ export default function AboutPage() {
           <div data-aos="fade">
             {/* Start top about info */}
             <div className="py-12">
-              <h2 className="after-effect after:left-52 mt-12 lg:mt-0 ">About Me</h2>
+              <h2 className="after-effect after:left-52 mt-12 lg:mt-0 text-white">About Me</h2>
               {/* Page Title */}
               <About />
             </div>
