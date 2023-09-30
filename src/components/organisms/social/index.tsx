@@ -1,6 +1,6 @@
-import { FaWhatsapp, FaLinkedinIn, FaGithub, FaMailBulk } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaMailBulk, FaWhatsapp } from 'react-icons/fa';
 
-const Social = () => {
+function Social() {
   const socialContent = [
     {
       id: 1,
@@ -37,6 +37,6 @@ const Social = () => {
       ))}
     </>
   );
-};
+}
 
 export default Social;
