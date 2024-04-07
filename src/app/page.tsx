@@ -3,7 +3,6 @@ import { ThemeProvider } from 'next-themes';
 import { Header, Hero, Seo } from '@/components';
 
 export default function Home() {
-
   return (
     <ThemeProvider attribute="class">
       <div className="min-h-screen bg-homeBg-dark bg-no-repeat bg-center bg-cover bg-fixed  md:pb-16 w-full">
