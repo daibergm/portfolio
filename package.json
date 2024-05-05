@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "circular-dependency-check": "dpdm ./src/* --circular --exit-code circular:1 --warning=false --tree=false",
     "start": "next start",
     "lint": "yarn tsc --noEmit && next lint . && yarn prettier --write .",
     "test": "jest",
@@ -31,6 +32,7 @@
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "autoprefixer": "^10.0.1",
+    "dpdm": "^3.14.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "^9.1.0",
